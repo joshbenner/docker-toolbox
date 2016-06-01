@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM tutum/ubuntu:trusty
 MAINTAINER Josh Benner <josh@bennerweb.com>
 
 RUN apt-get update && \
