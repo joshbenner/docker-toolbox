@@ -12,7 +12,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /root/.cache/pip
 
-ENV MYSQLDUMP_OPTIONS --quote-names --quick --add-drop-table --add-locks --allow-keywords --disable-keys --extended-insert --single-transaction --create-options --comments --net_buffer_length=16384 \
+ENV SSH_IMPORT_IDS=**None** \
+    MYSQLDUMP_OPTIONS="--quote-names --quick --add-drop-table --add-locks --allow-keywords --disable-keys --extended-insert --single-transaction --create-options --comments --net_buffer_length=16384" \
     MYSQL_HOST=**None** \
     MYSQL_PORT=3306 \
     MYSQL_USER=root \
@@ -20,3 +21,4 @@ ENV MYSQLDUMP_OPTIONS --quote-names --quick --add-drop-table --add-locks --allow
     MYSQL_BACKUP_DIR=/var/backup/mysql
 
 COPY mysql-backup.sh /mysql-backup.sh
+COPY run.sh /run.sh
