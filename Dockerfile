@@ -3,8 +3,8 @@ MAINTAINER Josh Benner <josh@bennerweb.com>
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y -q \
-        ldap-utils rsync curl wget git s3cmd python-pip mysql-client php5-cli \
-        dnsutils build-essential libffi-dev libssl-dev python-dev && \
+        slapd ldap-utils rsync curl wget git s3cmd python-pip mysql-client \
+        dnsutils php5-cli build-essential libffi-dev libssl-dev python-dev && \
     apt-get clean && \
     pip install -U pip virtualenv setuptools pyOpenSSL ndg-httpsclient pyasn1 && \
     apt-get purge -y build-essential libffi-dev libssl-dev python-dev && \
